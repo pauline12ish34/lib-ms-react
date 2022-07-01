@@ -1,0 +1,36 @@
+
+const onChangeSearchTitle=(e)=>{
+    const searchTitle=e.target.value;
+    setSearchTitle(searchTitle)
+  }
+
+  const findByTitle=()=>{
+    AuthorDataService.findByTitle(searchTitle)
+
+    .then(response=>{
+      setAuthors(response.data);
+      console.log(response.data);       
+
+    }
+
+    )
+    .catch( err => {
+      console.log(err);
+    });
+  };
+
+
+{/* 
+
+
+<div className="bg-white rounded px-3 pt-6 pb-8 mb-4 w-full max-w-xl md:ml-96; ">
+<input
+  type="text"
+  className="w-full py-2 px-3 border  "
+  placeholder="search by title"
+  value={searchTitle}
+  onChange={onChangeSearchTitle}
+/>
+<button type="button" onClick={findByTitle} > Search </button>
+
+</div> */}

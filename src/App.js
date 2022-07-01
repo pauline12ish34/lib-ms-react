@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+// import AddAuthor from './components/AddAuthor'
+import Navbar from './components/global/Navbar'
+import Home from './components/global/Home'
+import About from './components/global/About'
+import Contact from './components/global/Contact'
+import { Route,Routes } from 'react-router-dom';
+import AddAuthor from './components/AddAuthor'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+<Navbar/>
+{/* <AddAuthor></AddAuthor> */}
+
+<Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/add-author" element={<AddAuthor />} />
+    </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
